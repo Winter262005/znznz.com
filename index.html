@@ -14,13 +14,13 @@
     <h5 id="typewriter-text"></h5>
 
     <script>
-      const text = "initializing...\ninitialization complete";
+      const text = "initializing...\n\ninitialization complete\n\n\nproceeding to open your software...\n\nsoftware augmentation successful\n\n\nimporting scripts...\n\nscript import successful...\n\n\nimporting machine learning model...\n\nmodel insertion failed...retrying...\n\nmodel insertion failed...retrying...\n\nmodel insertion successful.\n\n\nerror : 0x80040203 [BlynkESP8266_Lib]";
       let index = 0;
       function typeWriter() {
         if (index < text.length) {
           document.getElementById("typewriter-text").innerHTML += text.charAt(index);
           index++;
-          setTimeout(typeWriter, Math.random() * 1000);
+          setTimeout(typeWriter, Math.random() * 40);
         }
       }
 
