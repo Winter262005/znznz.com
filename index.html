@@ -1,10 +1,30 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>
-      znznz.com
-    </title>
+    <title>znznz.com</title>
+    <style>
+      body {
+        background-color: black;
+        color: green;
+        font-family: Courier, monospace;
+      }
+    </style>
   </head>
-  <body style="background-color: black; color: green; font-family: Courier, monospace;">
-    <h3>Initializing...</h3>
+  <body>
+    <h1 id="typewriter-text"></h1>
+
+    <script>
+      const text = "initializing...<br>initialization complete";
+      let index = 0;
+      function typeWriter() {
+        if (index < text.length) {
+          document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, Math.random() * 200);
+        }
+      }
+
+      typeWriter();
+    </script>
   </body>
 </html>
