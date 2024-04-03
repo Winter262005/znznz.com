@@ -15,12 +15,13 @@
 
     <script>
       const text = "initializing...\n\ninitialization complete\n\n\nproceeding to open your software...\n\nsoftware augmentation successful\n\n\nimporting scripts...\n\nscript import successful...\n\n\nimporting machine learning model...\n\nmodel insertion failed...retrying...\n\nmodel insertion failed...retrying...\n\nmodel insertion successful.\n\n\nerror : 0x80040203 [BlynkESP8266_Lib]";
+      const formattedText = text.split('\n').join('<br>');
       let index = 0;
       function typeWriter() {
         if (index < text.length) {
           document.getElementById("typewriter-text").innerHTML += text.charAt(index);
           index++;
-          setTimeout(typeWriter, Math.random() * 40);
+          setTimeout(typeWriter, Math.random() * 30);
         }
       }
 
