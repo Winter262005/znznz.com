@@ -14,8 +14,30 @@
     <h5 id="typewriter-text"></h5>
 
     <script>
-      const text = "initializing...\n\ninitialization complete\n\n\nproceeding to open your software...\n\nsoftware augmentation successful\n\n\nimporting scripts...\n\nscript import successful...\n\n\nimporting machine learning model...\n\nmodel insertion failed...retrying...\n\nmodel insertion failed...retrying...\n\nmodel insertion successful.\n\n\nerror : 0x80040203 [BlynkESP8266_Lib]";
-      const formattedText = text.split('\n').join('<br>');
+      const text = `initializing...
+
+initialization complete
+
+
+proceeding to open your software...
+
+software augmentation successful
+
+
+importing scripts...
+
+script import successful...
+
+
+importing machine learning model...
+
+model insertion failed...retrying...
+model insertion failed...retrying...
+model insertion successful.
+
+
+error : 0x80040203 [BlynkESP8266_Lib]`;
+
       let index = 0;
       function typeWriter() {
         if (index < text.length) {
