@@ -14,40 +14,20 @@
     <h5 id="typewriter-text"></h5>
 
     <script>
-      const text = `initializing...
+    	var i = 0;
+			var txt = `initializing... \n initialization complete \n\n proceeding to open your software... \n software augmentation successful \n\n importing scripts...\n script import successful... \n\n importing machine learning model... \n\n model insertion failed...retrying... \n model insertion failed...retrying...\n model insertion failed...retrying... \n\n model insertion successful. \n\n error : 0x80040203 [BlynkESP8266_Lib]`;
+			var speed = 1;
 
-initialization complete
+			function typeWriter() {
+			  if (i < txt.length) {
+			    let text = txt.charAt(i);
+			    	document.getElementById("typewriter-text").innerHTML += text=== "\n" ? "<br/>": text;
+			  i++;
+    			setTimeout(typeWriter, speed);
+  			}
+			}
 
-
-proceeding to open your software...
-
-software augmentation successful
-
-
-importing scripts...
-
-script import successful...
-
-
-importing machine learning model...
-
-model insertion failed...retrying...
-model insertion failed...retrying...
-model insertion successful.
-
-
-error : 0x80040203 [BlynkESP8266_Lib]`;
-
-      let index = 0;
-      function typeWriter() {
-        if (index < text.length) {
-          document.getElementById("typewriter-text").innerHTML += text.charAt(index);
-          index++;
-          setTimeout(typeWriter, Math.random() * 30);
-        }
-      }
-
-      typeWriter();
+			typeWriter();
     </script>
   </body>
 </html>
