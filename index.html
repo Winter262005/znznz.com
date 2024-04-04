@@ -12,22 +12,28 @@
   </head>
   <body>
     <h5 id="typewriter-text"></h5>
+    <h5 id="hello-text" style="display:none;">hello</h5>
 
     <script>
-    	var i = 0;
-			var txt = `initializing... \n initialization complete \n\n proceeding to open your software... \n software augmentation successful \n\n importing scripts...\n script import successful... \n\n importing machine learning model... \n\n model insertion failed...retrying... \n model insertion failed...retrying...\n model insertion failed...retrying... \n\n model insertion successful. \n\n error : 0x80040203 [BlynkESP8266_Lib]`;
-			var speed = 1;
+      var i = 0;
+      var txt = `initializing... \n initialization complete \n\n proceeding to open your software... \n software augmentation successful \n\n importing scripts...\n script import successful... \n\n importing machine learning model... \n\n model insertion failed...retrying... \n model insertion failed...retrying...\n model insertion failed...retrying... \n\n model insertion successful. \n\n error : 0x80040203 [BlynkESP8266_Lib]                                             `;
+      var speed = 20; // Increased speed for faster typing effect
 
-			function typeWriter() {
-			  if (i < txt.length) {
-			    let text = txt.charAt(i);
-			    	document.getElementById("typewriter-text").innerHTML += text=== "\n" ? "<br/>": text;
-			  i++;
-    			setTimeout(typeWriter, speed);
-  			}
-			}
+      function typeWriter() {
+        if (i < txt.length) {
+          let text = txt.charAt(i);
+          document.getElementById("typewriter-text").innerHTML += text === "\n" ? "<br/>" : text;
+          i++;
+          setTimeout(typeWriter, speed);
+        } else {
+          // Typewriter effect has ended, hide typewriter text and display "hello"
+          document.getElementById("typewriter-text").style.display = "none";
+          document.getElementById("hello-text").style.display = "block";
+        }
+      }
 
-			typeWriter();
+      typeWriter();
     </script>
   </body>
 </html>
+
