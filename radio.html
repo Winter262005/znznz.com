@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+
+  <body>
+    <div id="display">Track: </div>
+    <button id="backward">Backward</button>
+    <button id="forward">Forward</button>
+
+    <script>
+      var audioFiles = ["audio1.mp3", "audio2.mp3", "audio3.mp3", "audio4.mp3", "audio5.mp3", "audio6.mp3", "audio7.mp3", "audio8.mp3", "audio9.mp3", "audio10.mp3"];
+      var audio = new Audio();
+      var currentTrack = 0;
+
+      function playTrack(track) {
+        audio.src = audioFiles[track];
+        audio.play();
+        currentTrack = track;
+        document.getElementById('display').innerText = "Track: " + (currentTrack + 1);
+      }
+
+      window.onload = function() {
+        document.getElementById('backward').onclick = function() {
+          if (currentTrack > 0) {
+            playTrack(currentTrack - 1);
+          }
+        };
+        document.getElementById('forward').onclick = function() {
+          if (currentTrack < audioFiles.length - 1) {
+            playTrack(currentTrack + 1);
+          }
+        };
+        playTrack(0);
+      }
+
+    </script>
+  </body>
+
+</html>
 
